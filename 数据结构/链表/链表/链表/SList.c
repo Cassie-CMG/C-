@@ -39,6 +39,7 @@ void PushFront(SList*p, int x)
 {
 	assert(p);
 	SListNode*node = Buy(x);
+	node->data = x;
 	node->next = p->head;
 	p->head = node;
 }
@@ -68,6 +69,8 @@ void PushBack(SList*p, int x)
 		last = last->next;
 	}
 	SListNode*node = Buy(x);
+	node->data = x;
+	node->next = NULL;
 	last->next = node;
 }
 
